@@ -1,0 +1,7 @@
+# Local development: everything in-process, verbose logs for the scenario packages.
+payments:
+  base-url: http://localhost:8089/mock-payments
+
+logging:
+  level:
+    com.example: DEBUG

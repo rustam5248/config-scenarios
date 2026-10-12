@@ -1,0 +1,17 @@
+# Production. Secrets come from the environment. PAYMENTS_API_KEY defaults to empty so that
+# PaymentConfig's explicit check stops startup with a clear message when it is missing
+# (instead of failing on the first customer checkout).
+payments:
+  base-url: https://api.payments.example.com
+  api-key: ${PAYMENTS_API_KEY:}
+  timeout: 2s
+
+platform:
+  cache:
+    type: redis
+    redis:
+      host: ${REDIS_HOST:redis.internal}
+
+notifications:
+  push:
+    enabled: true

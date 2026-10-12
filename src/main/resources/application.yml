@@ -1,0 +1,22 @@
+# Shared defaults. Profile-specific files (application-<profile>.yml) override these.
+spring:
+  application:
+    name: spring-config-scenarios
+  profiles:
+    # Used only when no profile is activated explicitly, so a bare `mvn spring-boot:run` is a dev run.
+    default: dev
+
+app:
+  region: ${DEPLOY_REGION:us}
+
+platform:
+  cache:
+    type: in-memory
+
+notifications:
+  push:
+    enabled: false
+
+payments:
+  base-url: https://sandbox.payments.example.com
+  timeout: 5s
